@@ -1,69 +1,78 @@
-\documentclass{classes/thesis}
+\documentclass{classes/bthesis}
 
 %%%%%%%% 著者名や題目はここで設定する %%%%%%%%%
-\newcommand{\myNameJa}{
+\newcommand{\myNameJa}{%
     %%%%%ここに日本語の著者名を書く
     %%%%%例：農工太郎
     農工太郎
 }
-\newcommand{\myNameEn}{
+\newcommand{\myNameEn}{%
     %%%%%ここに英語の著者名を書く
     %%%%%例：Taro NOKO
     Taro NOKO
 }
-\newcommand{\studentNumber}{
+\newcommand{\studentNumber}{%
     %%%%%学籍番号
     21266XXX
 }
-\newcommand{\yearOfEnrollment}{
+\newcommand{\yearOfEnrollment}{%
     %%%%%入学年
     2021
 }
-\newcommand{\titleJa}{
+\newcommand{\titleJa}{%
     %%%%%日本語タイトル，1行で
     金子研究室の卒論・修論用 {\LaTeX} 実行環境\&テンプレート
 }
-\newcommand{\titleJaLarge}{
+\newcommand{\titleJaLarge}{%
     %%%%%日本語タイトルが長い場合，「\\[3mm]」で改行を含める(表紙でのみ使用)
     %%%%%通常は\titleJaと同じでOK
     金子研究室の卒論・修論用\\
     \vspace{3mm}
     {\LaTeX} 実行環境\&テンプレート
 }
-\newcommand{\titleEn}{
+\newcommand{\titleEn}{%
     %%%%%英語タイトル，1行で
     {\LaTeX} runtime environment \& template for Kaneko Lab's graduation \& master's thesis
 }
-\newcommand{\titleEnLarge}{
+\newcommand{\titleEnLarge}{%
     %%%%%英語タイトルが長い場合，「\\[3mm]」で改行を含める(表紙でのみ使用)
     %%%%%通常は\titleEnと同じでOK
     {\LaTeX} runtime environment \& template\\
     \vspace{3mm}
     for Kaneko Lab's graduation \& master's thesis
 }
-\newcommand{\dateOfSubmission}{
+\newcommand{\dateOfSubmission}{%
     %%%%%卒論提出日
     2025年 2月 9日
 }
-\newcommand{\yearOfGraduation}{
+\newcommand{\yearOfGraduation}{%
     %%%%%卒業年度
     2024
 }
-\newcommand{\dateOfSubmissionAbs}{
+\newcommand{\dateOfSubmissionAbs}{%
     %%%%%要旨提出日
     2025年 2月 5日
 }
-\newcommand{\teacherName}{
+\newcommand{\teacherName}{%
     %%%%%指導教官名
     %%%%%例：農工 士郎 教授
     金子 敬一 教授
 }
 
+\newcommand{\thesisPortrait}{%
+    ./figures/sample_portrait.jpg
+}
+
 \begin{document}
+\bstctlcite{IEEEexample:BSTcontrol}
+
 % 前付け（ページ番号はローマ数字を用いる）
 \pagenumbering{roman}
-\subfile{sections/title.tex} % 表紙
+\makethesistitle % 表紙
+
+\makethesisabstracttitle
 \subfile{sections/abstract.tex} % 要旨
+
 \tableofcontents % 目次
 \cleardoublepage
 \listoffigures % 図目次
